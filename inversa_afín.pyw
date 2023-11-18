@@ -133,11 +133,13 @@ variable_m=Entry(frm, textvariable=text_var).grid(row=3, column=1, sticky="e", p
 
 boton1 = Button(frm, 
 					text="Cifrar", 
+					cursor="hand2",
 					padx=15, 
 					pady=15, command=lambda:cif(True)).grid(row=1, column=2)
 
 boton2 = Button(frm, 
 					text="Descifrar", 
+					cursor="hand2",
 					padx=15, 
 					pady=15, command=lambda:cif(False)).grid(row=3, column=2)
 
