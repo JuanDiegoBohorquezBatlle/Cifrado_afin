@@ -95,8 +95,11 @@ def cif(value):
 			
 			if element_search is not None:
 				resultado_C += element_search
+		result_C.config(state="normal")
+		result_C.delete(0,END)
+		result_C.insert(0, str(resultado_C))
+		result_C.config(state="readonly")
 
-		result_C.config(text=resultado_C)
 
 
 #-------------------------Widgets--------------------------------#
@@ -153,8 +156,11 @@ result_a.grid(row=4, column=1)
 
 
 rsc=Label(frm, text="Mensaje cifrado/descifrado:").grid(row=5, column=0, sticky="e", padx=15, pady=15)
-result_C=Label(frm, text="Esperando...")
+result_C=Entry(frm, justify="center",state="normal", bd=0, bg=frm.cget("bg"))
 result_C.grid(row=5, column=1)
+result_C.insert(0, "Esperando...")
+result_C.config(state="readonly")
+
 
 
 root.mainloop()
