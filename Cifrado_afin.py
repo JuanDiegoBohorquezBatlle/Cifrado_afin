@@ -25,7 +25,7 @@ root.title("Cifrado Afín")
 root.resizable(1,1)
 root.minsize(width=580, height=340)
 
-root.iconbitmap(resource_path("C:/Users/Juan Diego/Documents/GitHub/Cifrado_afin/icons8-python-32.ico")) 
+root.iconbitmap(resource_path(sys.executable)) 
 
 value_b = IntVar()
 value_var = IntVar()
