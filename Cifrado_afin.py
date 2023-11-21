@@ -7,10 +7,12 @@ def resource_path(relative_path):
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS
-    except Exception:
+    except AttributeError:
+        # Not running in PyInstaller, use the current working directory
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
+
 
 ABC=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"]
 val_num = {ABC: i for i, ABC in enumerate(ABC)}
@@ -25,7 +27,8 @@ root.title("Cifrado Afín")
 root.resizable(1,1)
 root.minsize(width=580, height=340)
 
-root.iconbitmap(resource_path(sys.executable)) 
+root.iconbitmap(default=resource_path("icons8-python-32.ico"))
+
 
 value_b = IntVar()
 value_var = IntVar()
